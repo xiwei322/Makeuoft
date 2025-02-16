@@ -19,7 +19,7 @@ def preprocess_frame(frame):
     return img
 
 def main():
-    cap = cv2.VideoCapture('http://192.168.2.16:8080')  # IP address of phone camera
+    cap = cv2.VideoCapture(0)
     if not cap.isOpened():
         print("Error: Camera not accessible")
         return
