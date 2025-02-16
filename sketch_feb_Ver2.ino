@@ -13,12 +13,10 @@ String incomingData = "";  // Variable to store incoming data
 
 void setup() {
 
-  servo1.attach(12);  // Servo 1 connected to pin 12 a
-  servo2.attach(13);  // Servo 2 connected to pin 13
-  
+  servo1.attach(13);  // Servo 1 connected to pin 12 a
 
   servo1.write(0);
-  servo2.write(0);
+
 
 
   Serial.begin(9600);  // Initialize serial communication at 9600 baud rate
@@ -33,11 +31,8 @@ void setup() {
     servo1.write(2);
     delay(5000);
    digitalWrite(8, LOW);   // Pin 8 HIGH
-    servo1.write(0);
+    servo1.write(90);
   digitalWrite(9, LOW);   // Pin 9 HIGH
-
-  servo1.write(4);
-  servo2.write(5);
 
 
 }
@@ -50,16 +45,16 @@ void loop() {
         // Check if data received is "Trash" or "Recycle"
         if (incomingData == "Trash") {
             digitalWrite(8, HIGH);  // Pin 8 HIGH
-              servo1.write(90);
-            delay(2000);             // Wait for 5 seconds
               servo1.write(0);
+            delay(2000);             // Wait for 5 seconds
+              servo1.write(90);
             digitalWrite(8, LOW);    // Pin 8 LOW
         }
         if (incomingData == "Recycle") {
             digitalWrite(9, HIGH);  // Pin 9 HIGH
-              servo2.write(90);
+              servo1.write(180);
             delay(2000);             // Wait for 3 seconds
-              servo2.write(0);
+              servo1.write(90);
             digitalWrite(9, LOW);    // Pin 9 LOW
         }
 
@@ -117,3 +112,4 @@ void loop() {
       incomingData += incomingByte;
     }
   }*/
+
