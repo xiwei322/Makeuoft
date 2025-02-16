@@ -1,0 +1,5 @@
+The model training reference is from this website:
+https://github.com/jzx-gooner/DL-wastesort?tab=readme-ov-file
+
+The trash and recycling category image is from this site:
+https://huggingface.co/datasets/garythung/trashnet/tree/main
